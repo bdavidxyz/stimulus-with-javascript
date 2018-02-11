@@ -16,7 +16,7 @@
 
 <script type="text/javascript">
 
-    var application = Stimulus.Application.start()
+    var application = Stimulus.Application.start();
     
     var Hello = Class({
       extends: Stimulus.Controller,
@@ -26,10 +26,10 @@
       greet: function() {
         var element = this.nameTarget
         var name = element.value
-        console.log("Hello; " + name)
+        console.log("Hello : " + name)
       }
-    })
-    application.register("hello", Hello)
+    });
+    application.register("hello", Hello);
 </script>
 </body>
 
