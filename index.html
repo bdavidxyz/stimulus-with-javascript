@@ -1,28 +1,22 @@
 <!DOCTYPE html>
 <html>
+
 <head>
   <title>Stimulus Sandbox</title>
   <script src="./classtrophobic.js"></script>
   <script src="./stimulus.js"></script>
 </head>
+
 <body>
+  
   <div data-controller="hello">
     <input type="text" data-target="hello.name">
     <button data-action="click->hello#greet">Greet</button>
   </div>
+
 <script type="text/javascript">
 
     var application = Stimulus.Application.start()
-    
-    // class Hello extends Stimulus.Controller {
-
-    //   greet() {
-    //     // console.log("Hello, Stimulus!", this.element)
-    //     const element = this.nameTarget
-    //     const name = element.value
-    //     console.log(`Hello, ${name}!`)
-    //   }
-    // }
     
     var Hello = Class({
       extends: Stimulus.Controller,
@@ -30,13 +24,9 @@
         targets : [ "name" ]
       },
       greet: function() {
-        // console.log("Hello, Stimulus!", this.element)
         var element = this.nameTarget
         var name = element.value
         console.log("Hello; " + name)
-        // const element = this.nameTarget
-        // const name = element.value
-        // console.log(`Hello, ${name}!`)
       }
     })
     application.register("hello", Hello)
