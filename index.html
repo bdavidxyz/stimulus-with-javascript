@@ -11,7 +11,7 @@
   
   <div data-controller="hello">
     <input type="text" data-target="hello.name">
-    <button data-action="click->hello#greet">Greet</button>
+    <button data-action="click->hello#greet">Greet in the console</button>
   </div>
 
 <script type="text/javascript">
@@ -24,11 +24,12 @@
         targets : [ "name" ]
       },
       greet: function() {
-        var element = this.nameTarget
-        var name = element.value
-        console.log("Hello : " + name)
+        var element = this.nameTarget;
+        var name = element.value;
+        console.log("Hello : " + name);
       }
     });
+    
     application.register("hello", Hello);
 </script>
 </body>
